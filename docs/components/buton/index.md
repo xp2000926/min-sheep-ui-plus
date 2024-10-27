@@ -1,12 +1,21 @@
-# 按钮 Buton
+# button
 
+:::demo 这是`hellowrld`组件我们可以传递msg属性给他
 
-:::abc 
-<HelloWorld msg="vue"></HelloWorld> 
+```vue
+<template>
+  <HelloWorld msg="vue"></HelloWorld>
+</template>
+```
+
 :::
 
+:::demo
 
+```vue
+<template>
+  <Test />
+</template>
+```
 
-
-
-<Test></Test>
+:::

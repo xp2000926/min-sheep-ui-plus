@@ -1,3 +1,4 @@
+import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
 
 const sidebar = [
   {
@@ -30,11 +31,10 @@ export default {
     sidebar
   },
   markdown: {
-    markdown: {
-      config: md => {
-        // 这里可以使用 markdown-it 插件，vitepress-theme-demoblock就是基于此开发的
-        md.use();
-      }
+    config: md => {
+      md.use(blockPlugin);
+      md.use(codePlugin, {});
+      md.use(renderPlugin, {});
     }
   }
 };
