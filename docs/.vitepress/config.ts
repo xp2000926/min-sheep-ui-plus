@@ -1,3 +1,4 @@
+import { defineConfig } from 'vitepress';
 import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
 
 const sidebar = [
@@ -24,7 +25,7 @@ const sidebar = [
   { text: '布局', items: [] }
 ];
 
-export default {
+export default defineConfig({
   title: 'min-sheep-ui',
   description: 'min-sheep-ui',
   themeConfig: {
@@ -37,4 +38,4 @@ export default {
       md.use(renderPlugin, {});
     }
   }
-};
+});

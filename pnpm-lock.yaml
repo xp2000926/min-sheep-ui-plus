@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      escape-html:
-        specifier: ^1.0.3
-        version: 1.0.3
-      prismjs:
-        specifier: ^1.29.0
-        version: 1.29.0
       vue:
         specifier: ^3.5.12
         version: 3.5.12(typescript@5.6.3)
@@ -39,6 +33,9 @@ importers:
       consola:
         specifier: ^3.2.3
         version: 3.2.3
+      escape-html:
+        specifier: ^1.0.3
+        version: 1.0.3
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
@@ -60,6 +57,9 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       typescript:
         specifier: ~5.6.2
         version: 5.6.3

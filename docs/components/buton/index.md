@@ -5,6 +5,11 @@
 ```vue
 <template>
   <HelloWorld msg="vue"></HelloWorld>
+  <HelloWorld msg="vue"></HelloWorld>
+  <HelloWorld msg="vue"></HelloWorld>
+  <HelloWorld msg="vue"></HelloWorld>
+  <HelloWorld msg="vue"></HelloWorld>
+  <div v-for="item in 10" :key="item">{{ item }}</div>
 </template>
 ```
 

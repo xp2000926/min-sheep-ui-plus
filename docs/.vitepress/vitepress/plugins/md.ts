@@ -1,7 +1,7 @@
 import mdContainer from 'markdown-it-container';
 import { highlight } from '../utils/highlight';
 import renderDemoBlock from './render.ts';
-import fs from 'fs';
+
 export const blockPlugin = md => {
   md.use(mdContainer, 'demo', {
     validate(params) {
@@ -38,8 +38,8 @@ export const codePlugin = (md, options) => {
         </template>`
           : ''
       }<template #highlight>
-      <div class="language-${lang}">
-    ${highlight(token.content, lang)}
+      <div class="language-${lang}" style="margin: 0;border-radius:0;background-color:var(--vp-c-bg-alt);">
+      ${highlight(token.content, lang)}
       </div>
       </template>`;
     }
