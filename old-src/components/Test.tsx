@@ -23,13 +23,13 @@ export default defineComponent({
       }
     }
   },
-  emits:['click']
-  setup(props, { slots,emit }) {
+  emits: ['click'],
+  setup(props, { slots, emit }) {
     // 响应式数据count
     const count = ref(0);
     const inc = () => {
       count.value++;
-      emit('click', count.value)
+      emit('click', count.value);
     };
 
     const list = ref<string[]>(['a', 'b', 'c']);

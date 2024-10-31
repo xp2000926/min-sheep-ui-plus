@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "format": "prettier --write src/ && prettier --write docs/ && prettier --write old-docs/ &&  prettier --write old-src/"
   },
   "dependencies": {
     "vue": "^3.5.12"
