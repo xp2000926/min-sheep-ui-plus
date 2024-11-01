@@ -10,11 +10,11 @@ $s-animation-ease-in-out-smooth: var(
   @apply inline-flex items-center justify-center text-center;
   // 元素
   @apply border-[1px] border-solid border-transparent
-h-[32px] py-[8px] px-[15px]
-bg-transparent;
+   h-[32px] py-[8px] px-[15px]
+   bg-transparent;
   // 文本属性
   @apply outline-0 leading-normal whitespace-nowrap
-   cursor-pointer;
+      cursor-pointer;
   line-height: 1;
   border: 1px solid #dcdfe6;
   font-weight: 500;
@@ -26,10 +26,16 @@ bg-transparent;
     border-color $s-animation-duration-slow $s-animation-ease-in-out-smooth,
     color $s-animation-duration-slow $s-animation-ease-in-out-smooth;
   &:hover {
-    @apply outline-none text-[#409eff] border-[#c6e2ff] bg-[#ecf5ff];
+    color: #409eff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+    @apply outline-none;
   }
   &:active {
-    @apply outline-none text-[#409eff]  bg-[#ecf5ff] border-[#409eff];
+    color: #409eff;
+    border-color: #409eff;
+    background-color: #ecf5ff;
+    @apply outline-none;
   }
   &:focus-visible {
     outline: 2px solid #a0cfff;
@@ -39,7 +45,11 @@ bg-transparent;
       outline 0s;
   }
   &[disabled] {
-    @apply cursor-not-allowed text-[#a8abb2]  bg-none bg-[#fff] border-[#e4e7ed];
+    @apply cursor-not-allowed;
+    color: #a8abb2;
+    background-image: none;
+    background-color: #fff;
+    border-color: #e4e7ed;
   }
   &.is-round {
     border-radius: 20px;
@@ -56,20 +66,26 @@ bg-transparent;
     }
   }
   .is-bg {
-    @apply bg-[#f5f7fa];
+    background-color: #f5f7fa;
   }
   & + .s-button {
     margin-left: 12px;
   }
-
   &.is-plain {
     &:hover {
-      @apply text-[#409eff] border-[#409eff] bg-[#fff] outline-none;
+      color: #409eff;
+      border-color: #409eff;
+      background-color: #fff;
+      outline: none;
     }
     &:active {
-      @apply text-[#409eff] border-[#409eff] bg-[#fff] outline-none;
+      color: #409eff;
+      border-color: #409eff;
+      background-color: #fff;
+      outline: none;
     }
     &:focus-visible {
+      // outline: 2px solid #a0cfff;
       outline: 2px solid #a0cfff;
       @apply outline-offset-1;
       transition:
@@ -77,16 +93,27 @@ bg-transparent;
         outline 0s;
     }
     &[disabled] {
-      @apply cursor-not-allowed text-[#a8abb2] bg-none bg-[#fff] border-[#e4e7ed];
+      @apply cursor-not-allowed;
+      color: #a8abb2;
+      background-image: none;
+      background-color: #fff;
+      border-color: #e4e7ed;
     }
   }
   &.is-dashed {
-    @apply bg-transparent     border-dashed;
+    background-color: transparent;
+    border-style: dashed;
+    // color: #409eff;
+    // border-color: #a0cfff;
     &:hover {
-      @apply outline-none  text-[#c6e2ff] border-[#c6e2ff];
+      color: #c6e2ff;
+      border-color: #c6e2ff;
+      @apply outline-none;
     }
     &:active {
-      @apply outline-none text-[#ecf5ff] border-[#ecf5ff];
+      color: #ecf5ff;
+      border-color: #ecf5ff;
+      @apply outline-none;
     }
     &:focus-visible {
       outline: 2px solid #a0cfff;
@@ -96,10 +123,10 @@ bg-transparent;
         outline 0s;
     }
     &[disabled] {
-      @apply text-[#a8abb2] border-[#e4e7ed];
+      color: #a8abb2;
+      border-color: #e4e7ed;
     }
   }
-
   &.s-button--small {
     height: 24px;
     padding: 5px 11px;
@@ -124,12 +151,16 @@ bg-transparent;
     background-color: #409eff;
     border-color: #409eff;
     &:hover {
-      @apply outline-none text-[#fff] border-[#79bbff] bg-[#79bbff];
+      color: #fff;
+      border-color: #79bbff;
+      background-color: #79bbff;
+      @apply outline-none;
     }
     &:active {
+      color: #fff;
       border-color: #337ecc;
       background-color: #337ecc;
-      @apply outline-none text-[#fff];
+      @apply outline-none;
     }
     &:focus-visible {
       outline: 2px solid #a0cfff;
@@ -139,7 +170,8 @@ bg-transparent;
         outline 0s;
     }
     &[disabled] {
-      @apply cursor-not-allowed text-[#fff];
+      color: #fff;
+      @apply cursor-not-allowed;
       background-image: none;
       background-color: #a0cfff;
       border-color: #a0cfff;
@@ -149,14 +181,16 @@ bg-transparent;
       background-color: #ecf5ff;
       border-color: #a0cfff;
       &:hover {
+        color: #fff;
         border-color: #409eff;
         background-color: #409eff;
-        @apply outline-none text-[#fff];
+        @apply outline-none;
       }
       &:active {
+        color: #fff;
         border-color: #337ecc;
         background-color: #337ecc;
-        @apply outline-none text-[#fff];
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #a0cfff;
@@ -172,16 +206,22 @@ bg-transparent;
       }
     }
     &.is-dashed {
-      @apply bg-transparent text-[#409eff] border-[#a0cfff];
+      background-color: transparent;
+      color: #409eff;
+      border-color: #a0cfff;
       &:hover {
-        @apply outline-none   text-[#409eff]  border-[#409eff];
+        color: #409eff;
+        border-color: #409eff;
+        @apply outline-none;
       }
       &:active {
-        @apply outline-none  text-[#337ecc] border-[#337ecc];
+        color: #337ecc;
+        border-color: #337ecc;
+        @apply outline-none;
       }
       &:focus-visible {
-        @apply outline-offset-1;
         outline: 2px solid #a0cfff;
+        @apply outline-offset-1;
         transition:
           outline-offset 0s,
           outline 0s;
@@ -197,14 +237,16 @@ bg-transparent;
     background-color: #67c23a;
     border-color: #67c23a;
     &:hover {
+      color: #fff;
       border-color: #95d475;
       background-color: #95d475;
-      @apply outline-none  text-[#fff];
+      @apply outline-none;
     }
     &:active {
+      color: #fff;
       border-color: #529b2e;
       background-color: #529b2e;
-      @apply outline-none text-[#fff];
+      @apply outline-none;
     }
     &:focus-visible {
       outline: 2px solid #b3e19d;
@@ -214,7 +256,8 @@ bg-transparent;
         outline 0s;
     }
     &[disabled] {
-      @apply cursor-not-allowed text-[#fff];
+      color: #fff;
+      @apply cursor-not-allowed;
       background-image: none;
       background-color: #b3e19d;
       border-color: #b3e19d;
@@ -224,14 +267,16 @@ bg-transparent;
       background-color: #ecf5ff;
       border-color: #b3e19d;
       &:hover {
+        color: #fff;
         border-color: #67c23a;
         background-color: #67c23a;
-        @apply outline-none  text-[#fff];
+        @apply outline-none;
       }
       &:active {
+        color: #fff;
         border-color: #529b2e;
         background-color: #529b2e;
-        @apply outline-none text-[#fff];
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #b3e19d;
@@ -247,12 +292,18 @@ bg-transparent;
       }
     }
     &.is-dashed {
-      @apply bg-transparent text-[#67c23a] border-[#b3e19d];
+      background-color: transparent;
+      color: #67c23a;
+      border-color: #b3e19d;
       &:hover {
-        @apply outline-none text-[#67c23a] border-[#67c23a];
+        color: #67c23a;
+        border-color: #67c23a;
+        @apply outline-none;
       }
       &:active {
-        @apply outline-none text-[#529b2e]  border-[#529b2e];
+        color: #529b2e;
+        border-color: #529b2e;
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #b3e19d;
@@ -262,7 +313,8 @@ bg-transparent;
           outline 0s;
       }
       &[disabled] {
-        @apply text-[#b3e19d] border-[#b3e19d];
+        color: #b3e19d;
+        border-color: #b3e19d;
       }
     }
   }
@@ -271,14 +323,16 @@ bg-transparent;
     background-color: #909399;
     border-color: #909399;
     &:hover {
+      color: #fff;
       border-color: #b1b3b8;
       background-color: #b1b3b8;
-      @apply outline-none text-[#fff];
+      @apply outline-none;
     }
     &:active {
+      color: #fff;
       border-color: #73767a;
       background-color: #73767a;
-      @apply outline-none text-[#fff];
+      @apply outline-none;
     }
     &:focus-visible {
       outline: 2px solid #c8c9cc;
@@ -288,7 +342,8 @@ bg-transparent;
         outline 0s;
     }
     &[disabled] {
-      @apply cursor-not-allowed text-[#fff];
+      color: #fff;
+      @apply cursor-not-allowed;
       background-image: none;
       background-color: #c8c9cc;
       border-color: #c8c9cc;
@@ -298,12 +353,16 @@ bg-transparent;
       background-color: #f4f4f5;
       border-color: #c8c9cc;
       &:hover {
-        @apply outline-none text-[#fff] border-[#909399]bg-[#909399];
+        color: #fff;
+        border-color: #909399;
+        background-color: #909399;
+        @apply outline-none;
       }
       &:active {
+        color: #fff;
         border-color: #73767a;
         background-color: #73767a;
-        @apply outline-none text-[#fff];
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #73767a;
@@ -319,12 +378,13 @@ bg-transparent;
       }
     }
     &.is-dashed {
-      @apply bg-transparent;
+      background-color: transparent;
       color: #909399;
       border-color: #c8c9cc;
       &:hover {
+        color: #909399;
         border-color: #909399;
-        @apply outline-none text-[#909399];
+        @apply outline-none;
       }
       &:active {
         color: #73767a;
@@ -355,7 +415,10 @@ bg-transparent;
       @apply outline-none;
     }
     &:active {
-      @apply outline-none  text-[#fff] border-[#b88230] bg-[#b88230];
+      color: #fff;
+      border-color: #b88230;
+      background-color: #b88230;
+      @apply outline-none;
     }
     &:focus-visible {
       outline: 2px solid #b88230;
@@ -376,10 +439,16 @@ bg-transparent;
       background-color: #fdf6ec;
       border-color: #f3d19e;
       &:hover {
-        @apply outline-none text-[#fff] border-[#e6a23c] bg-[#e6a23c];
+        color: #fff;
+        border-color: #e6a23c;
+        background-color: #e6a23c;
+        @apply outline-none;
       }
       &:active {
-        @apply outline-none  bg-[#b88230]  border-[#b88230] text-[#fff];
+        color: #fff;
+        border-color: #b88230;
+        background-color: #b88230;
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #f3d19e;
@@ -395,12 +464,18 @@ bg-transparent;
       }
     }
     &.is-dashed {
-      @apply bg-transparent text-[#e6a23c] border-[#f3d19e];
+      background-color: transparent;
+      color: #e6a23c;
+      border-color: #f3d19e;
       &:hover {
-        @apply outline-none text-[#e6a23c] border-[#e6a23c];
+        color: #e6a23c;
+        border-color: #e6a23c;
+        @apply outline-none;
       }
       &:active {
-        @apply outline-none  text-[#b88230] border-[#b88230];
+        color: #b88230;
+        border-color: #b88230;
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #f3d19e;
@@ -426,7 +501,10 @@ bg-transparent;
       @apply outline-none;
     }
     &:active {
-      @apply outline-none  text-[#fff] border-[#c45656] bg-[#c45656];
+      color: #fff;
+      border-color: #c45656;
+      background-color: #c45656;
+      @apply outline-none;
     }
     &:focus-visible {
       outline: 2px solid #fab6b6;
@@ -436,17 +514,27 @@ bg-transparent;
         outline 0s;
     }
     &[disabled] {
-      @apply cursor-not-allowed text-[#fff] bg-none bg-[#fab6b6] border-[#fab6b6];
+      color: #fff;
+      @apply cursor-not-allowed;
+      background-image: none;
+      background-color: #fab6b6;
+      border-color: #fab6b6;
     }
     &.is-plain {
       color: #f56c6c;
       background-color: #fef0f0;
       border-color: #fab6b6;
       &:hover {
-        @apply outline-none text-[#fff]  bg-[#f56c6c] border-[#f56c6c];
+        color: #fff;
+        border-color: #f56c6c;
+        background-color: #f56c6c;
+        @apply outline-none;
       }
       &:active {
-        @apply outline-none text-[#fff]  bg-[#c45656] border-[#c45656];
+        color: #fff;
+        border-color: #c45656;
+        background-color: #c45656;
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #fab6b6;
@@ -456,16 +544,24 @@ bg-transparent;
           outline 0s;
       }
       &[disabled] {
-        @apply text-[#fab6b6] bg-[#fef0f0] border-[#fde2e2];
+        color: #fab6b6;
+        background-color: #fef0f0;
+        border-color: #fde2e2;
       }
     }
     &.is-dashed {
-      @apply bg-transparent text-[#f56c6c] border-[#fab6b6];
+      background-color: transparent;
+      color: #f56c6c;
+      border-color: #fab6b6;
       &:hover {
-        @apply outline-none text-[#f56c6c] border-[#f56c6c];
+        color: #f56c6c;
+        border-color: #f56c6c;
+        @apply outline-none;
       }
       &:active {
-        @apply text-[#c45656] border-[#c45656] outline-none;
+        color: #c45656;
+        border-color: #c45656;
+        @apply outline-none;
       }
       &:focus-visible {
         outline: 2px solid #fab6b6;
@@ -475,7 +571,8 @@ bg-transparent;
           outline 0s;
       }
       &[disabled] {
-        @apply text-[#fab6b6] border-[#fab6b6];
+        color: #fab6b6;
+        border-color: #fab6b6;
       }
     }
   }
