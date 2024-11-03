@@ -2,21 +2,21 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    node: true
   },
   extends: [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-recommended",
-    "plugin:prettier/recommended",
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:prettier/recommended'
   ],
   parserOptions: {
     ecmaVersion: 13,
-    parser: "@typescript-eslint/parser",
-    sourceType: "module",
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
   },
-  plugins: ["vue", "@typescript-eslint"],
+  plugins: ['vue', '@typescript-eslint'],
   rules: {
-    complexity: ["error", 10], // 圈复杂度
-    "no-plusplus": "off", // 关闭i++ 报错
-  },
+    complexity: ['error', 10], // 圈复杂度
+    'no-plusplus': 'off' // 关闭i++ 报错
+  }
 };
