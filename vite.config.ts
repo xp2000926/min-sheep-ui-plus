@@ -16,8 +16,8 @@ export default defineConfig({
       web: [/.[tj]sx$/]
     },
     coverage: {
-      include: ['src/**/*.{js,ts}'], // 包含源码目录下的所有文件
-      exclude: ['src/views', 'src/main.ts', 'src/**/index.ts'] // 不包含测试文件和依赖
+      include: ['src/**/*.{js,ts,tsx}'], // 包含源码目录下的所有文件
+      exclude: ['src/views', 'src/**/e2e', 'src/main.ts', 'src/**/index.ts'] // 不包含测试文件和依赖
     }
   }
 });

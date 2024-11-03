@@ -1,6 +1,5 @@
 import Theme from 'vitepress/theme'; //默认样式
-import HelloWorld from '../../../src/components/HelloWorld.vue';
-import Test from '../../../src/components/Test';
+import MinSheepUI from '../../../scripts/entry';
 import Demo from '../vitepress/components/Demo.vue';
 import 'prismjs/themes/prism.css';
 export default {
@@ -8,7 +7,6 @@ export default {
   // 扩展应用程序实例
   enhanceApp({ app }) {
     app.component('Demo', Demo);
-    app.component('HelloWorld', HelloWorld);
-    app.component('Test', Test);
+    app.use(MinSheepUI);
   }
 };

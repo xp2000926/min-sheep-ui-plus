@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
+import { tooltip } from './vitepress/plugins/tooltip';
 
 const sidebar = [
   {
@@ -36,6 +37,7 @@ export default defineConfig({
       md.use(blockPlugin);
       md.use(codePlugin, {});
       md.use(renderPlugin, {});
+      // md.use(tooltip);
     }
   }
 });

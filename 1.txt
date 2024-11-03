@@ -1,0 +1,11 @@
+7.1-全量打包
+
+npm publish ./build --registry http://106.54.203.47:4873/
+
+npm config set registry http://106.54.203.47:4873/
+npm config get registry
+
+取消发布
+npm unpublish 包@版本号
+npm unpublish min-sheep-ui-test@0.1.1 registry http://106.54.203.47:4873/
+

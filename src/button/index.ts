@@ -8,7 +8,6 @@ export { Button };
 // 导出插件
 export default {
   install(app: App) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    app.component(Button.name!, Button);
+    app.component(Button.name, Button);
   }
 };

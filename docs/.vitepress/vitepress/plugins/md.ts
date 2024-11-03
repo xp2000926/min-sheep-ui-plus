@@ -34,7 +34,7 @@ export const codePlugin = (md, options) => {
       return `${
         description
           ? `<template #description>
-        <div>${md.renderInline(description)}</div>
+        <p>${md.renderInline(description)}</p>
         </template>`
           : ''
       }<template #highlight>
@@ -60,7 +60,6 @@ export const renderPlugin = (md, options = {}) => {
     // const data = md.__data
     // const hoistedTags = data?.hoistedTags || (data.hoistedTags = []);
     const data = md.__data || {};
-    console.log('data', data);
     const hoistedTags = data?.hoistedTags || (data.hoistedTags = []);
     hoistedTags.push(script);
     hoistedTags.push(style);
