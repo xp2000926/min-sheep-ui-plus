@@ -12,19 +12,29 @@ import { genTypesTemplate } from '../template/types';
 import { genStyleTemplate } from '../template/style';
 import { genTestTemplate } from '../template/test';
 import { genIndexTemplate } from '../template';
+import { genJsonTemplate } from '../template/json';
+import { genMdTemplate } from '../template/md';
 
+export interface ComponentMeta {
+  name: string;
+  title: string;
+  category: string;
+}
 const WRITE_FILE_OPTIONS: WriteFileOptions = { encoding: 'utf-8' };
-export const createComponent = ({ name }: { name: string }) => {
+export const createComponent = (meta: ComponentMeta) => {
+  const { name } = meta;
   //拼接组件目录
   const componentDir = resolve('../src', name); // 组件目录
+
   // TODO name  fromItem from-item
-  console.log('componentDir', componentDir);
   const compSrcDir = resolve(componentDir, 'src'); //组件源文件
   const styleDir = resolve(componentDir, 'style'); //样式文件
   const testDir = resolve(componentDir, 'test'); //测试文件
+  const docsDir = resolve('../docs/components', name); // 文档目录
   ensureDirSync(compSrcDir);
   ensureDirSync(styleDir);
   ensureDirSync(testDir);
+  ensureDirSync(docsDir);
   // 文件和内容创建
   // 核心文件:组件文件
   const coreFilePath = resolve(compSrcDir, `${name}.tsx`);
@@ -41,8 +51,18 @@ export const createComponent = ({ name }: { name: string }) => {
   // 索引文件
   const indexFilePath = componentDir + `/index.ts`;
   writeFileSync(indexFilePath, genIndexTemplate(name), WRITE_FILE_OPTIONS);
+  // dosc 文档目录
+  const jsonFilePath = componentDir + `/${name}.json`;
+  console.log('jsonFilePath', jsonFilePath);
+  writeFileSync(jsonFilePath, genJsonTemplate(meta), WRITE_FILE_OPTIONS);
+  // dosc 文档
+  const mdFilePath = docsDir + `/index.md`;
+  console.log('mdFilePath', mdFilePath, genMdTemplate(meta));
+  writeFileSync(mdFilePath, genMdTemplate(meta), WRITE_FILE_OPTIONS);
 
   // 创建成功通知
   console.log(lightGreen(`✔ 组件  ${name}创建完毕，目录创建成功`));
   console.log(lightBlue(`✔ 组件目录： ${componentDir}`));
+  console.log(lightGreen(`✔ 文档  ${name}创建完毕，目录创建成功`));
+  console.log(lightBlue(`✔ 文档目录： ${docsDir}`));
 };
