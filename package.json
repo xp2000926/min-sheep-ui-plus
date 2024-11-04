@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.vue",
     "prepare": "husky install",
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "format": "prettier --write src/ && prettier --write docs/ && prettier --write old-docs/ &&  prettier --write old-src/",

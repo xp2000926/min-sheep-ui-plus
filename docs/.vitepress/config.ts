@@ -22,7 +22,19 @@ const sidebar = [
   },
   { text: '反馈', items: [] },
   { text: '数据录入', items: [] },
-  { text: '数据展示', items: [] },
+  {
+    text: '数据展示',
+    items: [
+      {
+        text: 'Tree 树 ',
+        link: '/components/tree/'
+      },
+      {
+        text: 'Empty 空状态 ',
+        link: '/components/empty/'
+      }
+    ]
+  },
   { text: '布局', items: [] }
 ];
 
@@ -30,7 +42,8 @@ export default defineConfig({
   title: 'min-sheep-ui',
   description: 'min-sheep-ui',
   themeConfig: {
-    sidebar
+    sidebar,
+    outlineTitle: '内容'
   },
   markdown: {
     config: md => {

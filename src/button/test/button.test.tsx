@@ -8,6 +8,8 @@ describe('button 测试', () => {
     // 渲染组件
     const { getByRole } = render(Button);
     getByRole('button');
+    const button = getByRole('button');
+    expect(button.classList.contains(`s-button--default`)).toBe(false);
   });
   // 插槽
   test('默认插槽是不是空', () => {
@@ -38,6 +40,15 @@ describe('button 测试', () => {
         expect(button.classList.contains(`s-button--${type}`)).toBe(true);
       }
     );
+    it('type default', () => {
+      const { getByRole } = render(Button, {
+        props: {
+          type: 'default'
+        }
+      });
+      const button = getByRole('button');
+      expect(button.classList.contains(`s-button--default`)).toBe(false);
+    });
   });
   describe('button的size测试', () => {
     test.each(['small', 'large'])(
@@ -52,6 +63,15 @@ describe('button 测试', () => {
         expect(button.classList.contains(`s-button--${size}`)).toBe(true);
       }
     );
+    it('size default', () => {
+      const { getByRole } = render(Button, {
+        props: {
+          size: 'default'
+        }
+      });
+      const button = getByRole('button');
+      expect(button.classList.contains(`s-button--default`)).toBe(false);
+    });
   });
   test('block 是否正常工作', () => {
     const { getByRole } = render(Button, {
@@ -138,11 +158,7 @@ describe('button 测试', () => {
       expect(wrapper.text()).toEqual('测试');
     });
     test('tag 为 a 默认插槽是否可以正常工作', () => {
-      const wrapper = mount(() => (
-        <Button tag="a" href={link}>
-          测试
-        </Button>
-      ));
+      const wrapper = mount(() => <Button tag="a">测试</Button>);
       expect(wrapper.text()).toEqual('测试');
     });
     it('tag为a时添加默认属性是否生效', () => {

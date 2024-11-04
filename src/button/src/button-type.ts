@@ -1,7 +1,6 @@
-import { Component, ExtractPropTypes, PropType } from 'vue';
+import { Component, ExtractPropTypes } from 'vue';
+import { definePropType } from '../../utils';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const definePropType = <T>(val: any): PropType<T> => val;
 export type ButtonType =
   | ''
   | 'primary'
@@ -14,12 +13,10 @@ export type ButtonSize = '' | 'small' | 'large' | 'default';
 //buttonProps 是用于约束用户在进行属性定义的时候的属性对象，并不是属性类型
 export const buttonProps = {
   type: {
-    // type: String as PropType<ButtonType>,
     type: definePropType<string | ButtonType>(String),
-    default: ''
+    default: 'primary'
   },
   size: {
-    // type: String as PropType<ButtonSize>,
     type: definePropType<string | ButtonSize>(String),
     default: ''
   },

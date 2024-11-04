@@ -38,7 +38,7 @@ var createComponent = function (_a) {
     var styleFilePath = styleDir + "/".concat(name, ".scss");
     (0, fs_extra_1.writeFileSync)(styleFilePath, (0, style_1.genStyleTemplate)(name), WRITE_FILE_OPTIONS);
     // 核心文件:测试文件
-    var testFilePath = testDir + "/".concat(name, ".test.ts");
+    var testFilePath = testDir + "/".concat(name, ".test.tsx");
     (0, fs_extra_1.writeFileSync)(testFilePath, (0, test_1.genTestTemplate)(name), WRITE_FILE_OPTIONS);
     // 索引文件
     var indexFilePath = componentDir + "/index.ts";

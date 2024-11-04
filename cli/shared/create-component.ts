@@ -17,7 +17,7 @@ const WRITE_FILE_OPTIONS: WriteFileOptions = { encoding: 'utf-8' };
 export const createComponent = ({ name }: { name: string }) => {
   //拼接组件目录
   const componentDir = resolve('../src', name); // 组件目录
-  // todo name  fromItem from-item
+  // TODO name  fromItem from-item
   console.log('componentDir', componentDir);
   const compSrcDir = resolve(componentDir, 'src'); //组件源文件
   const styleDir = resolve(componentDir, 'style'); //样式文件
@@ -36,7 +36,7 @@ export const createComponent = ({ name }: { name: string }) => {
   const styleFilePath = styleDir + `/${name}.scss`;
   writeFileSync(styleFilePath, genStyleTemplate(name), WRITE_FILE_OPTIONS);
   // 核心文件:测试文件
-  const testFilePath = testDir + `/${name}.test.ts`;
+  const testFilePath = testDir + `/${name}.test.tsx`;
   writeFileSync(testFilePath, genTestTemplate(name), WRITE_FILE_OPTIONS);
   // 索引文件
   const indexFilePath = componentDir + `/index.ts`;

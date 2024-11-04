@@ -107,7 +107,7 @@
 ```vue
 <template>
   <s-button>button</s-button>
-  <s-button disabled  tag="div" role="button" tabindex="0">div</s-button>
+  <s-button  tag="div" role="button" tabindex="0">div</s-button>
   <s-button
     type="primary"
     tag="a"
