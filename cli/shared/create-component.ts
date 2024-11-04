@@ -53,11 +53,9 @@ export const createComponent = (meta: ComponentMeta) => {
   writeFileSync(indexFilePath, genIndexTemplate(name), WRITE_FILE_OPTIONS);
   // dosc 文档目录
   const jsonFilePath = componentDir + `/${name}.json`;
-  console.log('jsonFilePath', jsonFilePath);
   writeFileSync(jsonFilePath, genJsonTemplate(meta), WRITE_FILE_OPTIONS);
   // dosc 文档
   const mdFilePath = docsDir + `/index.md`;
-  console.log('mdFilePath', mdFilePath, genMdTemplate(meta));
   writeFileSync(mdFilePath, genMdTemplate(meta), WRITE_FILE_OPTIONS);
 
   // 创建成功通知

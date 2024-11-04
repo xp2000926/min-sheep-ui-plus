@@ -48,11 +48,9 @@ var createComponent = function (meta) {
     (0, fs_extra_1.writeFileSync)(indexFilePath, (0, template_1.genIndexTemplate)(name), WRITE_FILE_OPTIONS);
     // dosc 文档目录
     var jsonFilePath = componentDir + "/".concat(name, ".json");
-    console.log('jsonFilePath', jsonFilePath);
     (0, fs_extra_1.writeFileSync)(jsonFilePath, (0, json_1.genJsonTemplate)(meta), WRITE_FILE_OPTIONS);
     // dosc 文档
     var mdFilePath = docsDir + "/index.md";
-    console.log('mdFilePath', mdFilePath, (0, md_1.genMdTemplate)(meta));
     (0, fs_extra_1.writeFileSync)(mdFilePath, (0, md_1.genMdTemplate)(meta), WRITE_FILE_OPTIONS);
     // 创建成功通知
     console.log((0, kolorist_1.lightGreen)("\u2714 \u7EC4\u4EF6  ".concat(name, "\u521B\u5EFA\u5B8C\u6BD5\uFF0C\u76EE\u5F55\u521B\u5EFA\u6210\u529F")));
