@@ -104,10 +104,11 @@
 ## Tag
 
 :::demo 您可以自定义元素标签。例如，按钮，div，路由链接，nuxt链接。
+
 ```vue
 <template>
   <s-button>button</s-button>
-  <s-button  tag="div" role="button" tabindex="0">div</s-button>
+  <s-button tag="div" role="button" tabindex="0">div</s-button>
   <s-button
     type="primary"
     tag="a"
@@ -119,6 +120,20 @@
   </s-button>
 </template>
 ```
+
+:::
+
+## 块级按钮 block
+
+:::demo 通过 `block` 属性设置按钮为块级
+
+```vue
+<template>
+  <s-button type="primary" block>Confirm</s-button>
+  <s-button block>Cancel</s-button>
+</template>
+```
+
 :::
 
 ## Button API
@@ -127,6 +142,15 @@
 
 | 属性名 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| size | 尺寸 | <!--^[enum]-->` 'large' \| 'default' \| 'small'` | — |
+| size | 尺寸 | `'large' \| 'default' \| 'small'` | — |
 | type | 类型 | `''\| 'primary' \| 'success' \| 'info' \| 'warning' \| 'danger'\| 'default'` | — |
 | plain | 是否为朴素按钮 | `boolean` | false |
+| block | 块级 | `boolean` | false |
+| disabled | 是否禁用状态 | `boolean` | false |
+| round | 是否圆角按钮 | `boolean` | false |
+
+### Button 插槽
+
+| 插槽名 | 说明           |
+| ------ | -------------- |
+| —      | 自定义默认内容 |

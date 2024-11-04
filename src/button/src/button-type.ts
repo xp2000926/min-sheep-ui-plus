@@ -14,7 +14,7 @@ export type ButtonSize = '' | 'small' | 'large' | 'default';
 export const buttonProps = {
   type: {
     type: definePropType<string | ButtonType>(String),
-    default: 'primary'
+    default: ''
   },
   size: {
     type: definePropType<string | ButtonSize>(String),
