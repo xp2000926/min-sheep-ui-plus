@@ -1,7 +1,7 @@
 import * as inquirer from 'inquirer'; // 如果你使用的是tsnd方式需要这样导入
 import { red } from 'kolorist'; //颜色库
 import { createComponent } from '../shared/create-component';
-// import { createDocs } from '../shared/create-docs';
+
 // create type 支持项
 const CREATE_TYPES = ['component', 'lib-entry'];
 // 文档分类
@@ -83,8 +83,7 @@ export const onCreate = async (args = { type: '' }) => {
         ]);
         console.log(info);
         // 创建组件模板文件
-        createComponent({ name: info.name });
-        // createDocs(info);
+        createComponent(info);
         break;
       default:
         break;

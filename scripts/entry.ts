@@ -3,10 +3,12 @@
 import type { App } from 'vue';
 import ButtonPlugin, { Button } from '../src/button'; // 按钮
 import EmptyPlugin, { Empty } from '../src/empty'; // 空状态
-// 2.导出这些组件
-export { Button, Empty };
+import TreePlugin, { Tree } from '../src/tree'; // 空状态
 
-const installs = [ButtonPlugin, EmptyPlugin];
+// 2.导出这些组件
+export { Button, Empty, Tree };
+
+const installs = [ButtonPlugin, EmptyPlugin, TreePlugin];
 // 3.导出一个vue插件
 export default {
   install(app: App) {
