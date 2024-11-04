@@ -36,7 +36,7 @@ fs.readdir(filename, async (err, files: any[]) => {
       return {
         file: fs
           .readdirSync(path.resolve(filename, element))
-          .filter(it => /\.json$/.test(it))[0],
+          .filter(it => 'index.json'===it)[0],
         path: path.resolve(filename, element)
       };
     })

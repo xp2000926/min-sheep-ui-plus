@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import Flex from './src/flex';
+import Flex from './src';
 
 // 具名导出
 export { Flex };

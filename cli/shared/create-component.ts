@@ -30,7 +30,7 @@ export const createComponent = (meta: ComponentMeta) => {
   const compSrcDir = resolve(componentDir, 'src'); //组件源文件
   const styleDir = resolve(componentDir, 'style'); //样式文件
   const testDir = resolve(componentDir, 'test'); //测试文件
-  const docsDir = resolve('../docs/components', name); // 文档目录
+  const docsDir = resolve('../docs/components', name); // 文档文件
   ensureDirSync(compSrcDir);
   ensureDirSync(styleDir);
   ensureDirSync(testDir);
@@ -43,19 +43,19 @@ export const createComponent = (meta: ComponentMeta) => {
   const typesFilePath = resolve(compSrcDir, name + '-type.ts');
   writeFileSync(typesFilePath, genTypesTemplate(name), WRITE_FILE_OPTIONS);
   //核心文件:样式文件
-  const styleFilePath = styleDir + `/${name}.scss`;
+  const styleFilePath = `${styleDir}/${name}.scss`;
   writeFileSync(styleFilePath, genStyleTemplate(name), WRITE_FILE_OPTIONS);
   // 核心文件:测试文件
-  const testFilePath = testDir + `/${name}.test.tsx`;
+  const testFilePath = `${testDir}/${name}.test.tsx`;
   writeFileSync(testFilePath, genTestTemplate(name), WRITE_FILE_OPTIONS);
   // 索引文件
-  const indexFilePath = componentDir + `/index.ts`;
+  const indexFilePath = `${componentDir}/index.ts`;
   writeFileSync(indexFilePath, genIndexTemplate(name), WRITE_FILE_OPTIONS);
   // dosc 文档目录
-  const jsonFilePath = componentDir + `/${name}.json`;
+  const jsonFilePath = `${componentDir}/index.json`;
   writeFileSync(jsonFilePath, genJsonTemplate(meta), WRITE_FILE_OPTIONS);
   // dosc 文档
-  const mdFilePath = docsDir + `/index.md`;
+  const mdFilePath = `${docsDir}/index.md`;
   writeFileSync(mdFilePath, genMdTemplate(meta), WRITE_FILE_OPTIONS);
 
   // 创建成功通知

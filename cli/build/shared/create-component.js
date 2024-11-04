@@ -25,7 +25,7 @@ var createComponent = function (meta) {
     var compSrcDir = (0, path_1.resolve)(componentDir, 'src'); //组件源文件
     var styleDir = (0, path_1.resolve)(componentDir, 'style'); //样式文件
     var testDir = (0, path_1.resolve)(componentDir, 'test'); //测试文件
-    var docsDir = (0, path_1.resolve)('../docs/components', name); // 文档目录
+    var docsDir = (0, path_1.resolve)('../docs/components', name); // 文档文件
     (0, fs_extra_1.ensureDirSync)(compSrcDir);
     (0, fs_extra_1.ensureDirSync)(styleDir);
     (0, fs_extra_1.ensureDirSync)(testDir);
@@ -38,19 +38,19 @@ var createComponent = function (meta) {
     var typesFilePath = (0, path_1.resolve)(compSrcDir, name + '-type.ts');
     (0, fs_extra_1.writeFileSync)(typesFilePath, (0, types_1.genTypesTemplate)(name), WRITE_FILE_OPTIONS);
     //核心文件:样式文件
-    var styleFilePath = styleDir + "/".concat(name, ".scss");
+    var styleFilePath = "".concat(styleDir, "/").concat(name, ".scss");
     (0, fs_extra_1.writeFileSync)(styleFilePath, (0, style_1.genStyleTemplate)(name), WRITE_FILE_OPTIONS);
     // 核心文件:测试文件
-    var testFilePath = testDir + "/".concat(name, ".test.tsx");
+    var testFilePath = "".concat(testDir, "/").concat(name, ".test.tsx");
     (0, fs_extra_1.writeFileSync)(testFilePath, (0, test_1.genTestTemplate)(name), WRITE_FILE_OPTIONS);
     // 索引文件
-    var indexFilePath = componentDir + "/index.ts";
+    var indexFilePath = "".concat(componentDir, "/index.ts");
     (0, fs_extra_1.writeFileSync)(indexFilePath, (0, template_1.genIndexTemplate)(name), WRITE_FILE_OPTIONS);
     // dosc 文档目录
-    var jsonFilePath = componentDir + "/".concat(name, ".json");
+    var jsonFilePath = "".concat(componentDir, "/index.json");
     (0, fs_extra_1.writeFileSync)(jsonFilePath, (0, json_1.genJsonTemplate)(meta), WRITE_FILE_OPTIONS);
     // dosc 文档
-    var mdFilePath = docsDir + "/index.md";
+    var mdFilePath = "".concat(docsDir, "/index.md");
     (0, fs_extra_1.writeFileSync)(mdFilePath, (0, md_1.genMdTemplate)(meta), WRITE_FILE_OPTIONS);
     // 创建成功通知
     console.log((0, kolorist_1.lightGreen)("\u2714 \u7EC4\u4EF6  ".concat(name, "\u521B\u5EFA\u5B8C\u6BD5\uFF0C\u76EE\u5F55\u521B\u5EFA\u6210\u529F")));
