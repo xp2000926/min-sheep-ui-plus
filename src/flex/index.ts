@@ -1,5 +1,7 @@
 import { App } from 'vue';
 import Flex from './src';
+import '../index.scss';
+import './style/flex.scss';
 
 // 具名导出
 export { Flex };

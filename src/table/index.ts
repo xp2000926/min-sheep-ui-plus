@@ -1,5 +1,7 @@
 import { App } from 'vue';
 import Table from './src/table';
+import '../index.scss';
+import './style/table.scss';
 
 // 具名导出
 export { Table };

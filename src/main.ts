@@ -3,9 +3,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 // import './index.scss';
 
-// import Button from './button';
+import Button from './button';
 
 // 使用全量导出
-import minSheepUI from '../build/min-sheep-ui.mjs';
-import '../build';
-createApp(App).use(minSheepUI).mount('#app');
+createApp(App).use(Button).mount('#app');
