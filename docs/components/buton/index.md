@@ -142,8 +142,8 @@
 
 | 属性名 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| size | 尺寸 | `'large' \| 'default' \| 'small'` | — |
-| type | 类型 | `''\| 'primary' \| 'success' \| 'info' \| 'warning' \| 'danger'\| 'default'` | — |
+| size | 尺寸 | ^[enum]`'large' \| 'default' \| 'small'` | — |
+| type | 类型 | ^[enum]`''\| 'primary' \| 'success' \| 'info' \| 'warning' \| 'danger'\| 'default'` | — |
 | plain | 是否为朴素按钮 | `boolean` | false |
 | block | 块级 | `boolean` | false |
 | disabled | 是否禁用状态 | `boolean` | false |

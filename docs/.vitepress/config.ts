@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress';
 import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
-// import { tooltip } from './vitepress/plugins/tooltip';
+import { tooltip } from './vitepress/plugins/tooltip';
 import fs from 'fs';
 const path = require('path');
 
@@ -14,7 +14,8 @@ let sidebar: Array<{
   { text: '反馈', items: [] },
   { text: '数据录入', items: [] },
   { text: '数据展示', items: [] },
-  { text: '布局', items: [] }
+  { text: '布局', items: [] },
+  { text: '其他', items: [] }
 ];
 
 // 动态生成 docs 的 sidebar 目录
@@ -75,7 +76,7 @@ export default defineConfig({
       md.use(blockPlugin);
       md.use(codePlugin, {});
       md.use(renderPlugin, {});
-      // md.use(tooltip);
+      md.use(tooltip);
     }
   }
 });

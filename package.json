@@ -14,11 +14,12 @@
     "format": "prettier --write src/ && prettier --write docs/ && prettier --write old-docs/ &&  prettier --write old-src/",
     "test": "vitest",
     "coverage": "vitest --coverage",
-    "build:lib": "node ./scripts/build.js",
+    "build:lib": "node ./scripts/build.js --excluded ['calendar','card','carousel','divider','watermark','tooltip']",
     "cli": "cd cli && npm run cli"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.12",
+    "dayjs": "^1.11.13",
     "vue": "^3.5.12"
   },
   "devDependencies": {

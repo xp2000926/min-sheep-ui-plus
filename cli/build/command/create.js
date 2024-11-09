@@ -58,7 +58,8 @@ var DOCS_CATEGORIES = [
     '反馈',
     '数据录入',
     '数据展示',
-    '布局'
+    '布局',
+    '其他'
 ];
 var onCreate = function () {
     var args_1 = [];

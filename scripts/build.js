@@ -119,13 +119,28 @@ const buildSingle = async name => {
 const buildLib = async () => {
   await buildAll();
   // 按需打包
-  fs.readdirSync(componentsDir)
+  fs
+    .readdirSync(componentsDir)
     .filter(name => {
       // 过滤组件目录：只要目录不要文件，且目录中包含index.ts
       const componentDir = path.resolve(componentsDir, name);
       const isDir = fs.lstatSync(componentDir).isDirectory();
       return isDir && fs.readdirSync(componentDir).includes('index.ts');
     })
+    .filter(
+      item =>
+        ![
+          'avatar',
+          'calendar',
+          'card',
+          'carousel',
+          'divider',
+          'watermark',
+          'tooltip',
+          'result',
+          'flex'
+        ].includes(item)
+    )
     .forEach(async name => {
       await buildSingle(name);
     });

@@ -1,7 +1,7 @@
 export const tooltip = md => {
   md.renderer.rules.tooltip = (tokens, idx) => {
     const token = tokens[idx];
-
+    return `<code>${token.info}</code>`;
     return `<api-typing type="${token.content}" details="${token.info}" />`;
   };
   md.inline.ruler.before('emphasis', 'tooltip', (state, silent) => {

@@ -11,7 +11,8 @@ const DOCS_CATEGORIES = [
   '反馈',
   '数据录入',
   '数据展示',
-  '布局'
+  '布局',
+  '其他'
 ];
 export const onCreate = async (args = { type: '' }) => {
   // 容错,判断用户是否输入type
