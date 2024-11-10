@@ -5,11 +5,18 @@ import ButtonPlugin, { Button } from '../src/button'; // 按钮
 import EmptyPlugin, { Empty } from '../src/empty'; // 空状态
 import TreePlugin, { Tree } from '../src/tree'; // 空状态
 import FlexPlugin, { Flex } from '../src/flex'; // 弹性布局
+import BadgePlugin, { Badge } from '../src/badge'; // 徽章
 
 // 2.导出这些组件
-export { Button, Empty, Tree, Flex };
+export { Button, Empty, Tree, Flex, Badge };
 
-const installs = [ButtonPlugin, EmptyPlugin, TreePlugin, FlexPlugin];
+const installs = [
+  ButtonPlugin,
+  EmptyPlugin,
+  TreePlugin,
+  FlexPlugin,
+  BadgePlugin
+];
 // 3.导出一个vue插件
 export default {
   install(app: App) {
