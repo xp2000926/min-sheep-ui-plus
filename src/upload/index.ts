@@ -9,6 +9,6 @@ export { Upload };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Upload.name, Upload);
+    app.component(Upload.name!, Upload);
   }
 };

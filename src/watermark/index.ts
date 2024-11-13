@@ -9,6 +9,6 @@ export { Watermark };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Watermark.name, Watermark);
+    app.component(Watermark.name!, Watermark);
   }
 };

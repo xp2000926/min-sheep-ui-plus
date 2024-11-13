@@ -9,6 +9,6 @@ export { Dropdown };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Dropdown.name, Dropdown);
+    app.component(Dropdown.name!, Dropdown);
   }
 };

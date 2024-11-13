@@ -9,6 +9,6 @@ export { Switch };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Switch.name, Switch);
+    app.component(Switch.name!, Switch);
   }
 };

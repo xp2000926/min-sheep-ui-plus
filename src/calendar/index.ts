@@ -9,6 +9,6 @@ export { Calendar };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Calendar.name, Calendar);
+    app.component(Calendar.name!, Calendar);
   }
 };

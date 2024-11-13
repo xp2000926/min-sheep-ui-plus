@@ -9,6 +9,6 @@ export { Checkbox };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Checkbox.name, Checkbox);
+    app.component(Checkbox.name!, Checkbox);
   }
 };

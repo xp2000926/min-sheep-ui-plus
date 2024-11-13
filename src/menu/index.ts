@@ -9,6 +9,6 @@ export { Menu };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Menu.name, Menu);
+    app.component(Menu.name!, Menu);
   }
 };

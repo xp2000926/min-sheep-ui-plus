@@ -9,6 +9,6 @@ export { Message };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Message.name, Message);
+    app.component(Message.name!, Message);
   }
 };

@@ -9,6 +9,6 @@ export { Trigger };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Trigger.name, Trigger);
+    app.component(Trigger.name!, Trigger);
   }
 };

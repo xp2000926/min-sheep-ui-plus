@@ -9,6 +9,6 @@ export { Flex };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Flex.name, Flex);
+    app.component(Flex.name!, Flex);
   }
 };

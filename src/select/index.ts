@@ -9,6 +9,6 @@ export { Select };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Select.name, Select);
+    app.component(Select.name!, Select);
   }
 };

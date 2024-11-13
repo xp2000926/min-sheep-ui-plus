@@ -9,6 +9,6 @@ export { Table };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Table.name, Table);
+    app.component(Table.name!, Table);
   }
 };

@@ -9,6 +9,6 @@ export { Popover };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Popover.name, Popover);
+    app.component(Popover.name!, Popover);
   }
 };

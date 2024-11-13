@@ -9,6 +9,6 @@ export { Card };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Card.name, Card);
+    app.component(Card.name!, Card);
   }
 };

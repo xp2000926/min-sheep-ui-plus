@@ -9,6 +9,6 @@ export { Progress };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Progress.name, Progress);
+    app.component(Progress.name!, Progress);
   }
 };

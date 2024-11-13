@@ -9,6 +9,6 @@ export { Tooltip };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Tooltip.name, Tooltip);
+    app.component(Tooltip.name!, Tooltip);
   }
 };

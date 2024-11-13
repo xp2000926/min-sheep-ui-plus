@@ -9,6 +9,6 @@ export { Carousel };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Carousel.name, Carousel);
+    app.component(Carousel.name!, Carousel);
   }
 };

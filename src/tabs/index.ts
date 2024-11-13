@@ -9,6 +9,6 @@ export { Tabs };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Tabs.name, Tabs);
+    app.component(Tabs.name!, Tabs);
   }
 };

@@ -9,6 +9,6 @@ export { Tree };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Tree.name, Tree);
+    app.component(Tree.name!, Tree);
   }
 };

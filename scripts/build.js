@@ -4,13 +4,20 @@ const fs = require('fs');
 const { defineConfig, build } = require('vite');
 const vue = require('@vitejs/plugin-vue');
 const vueJsx = require('@vitejs/plugin-vue-jsx');
+// const dts = require('vite-plugin-dts');
 const fsExtra = require('fs-extra');
 
 // 基础配置
 const baseConfig = defineConfig({
   configFile: false,
   publicDir: false,
-  plugins: [vue(), vueJsx()]
+  plugins: [
+    vue(),
+    vueJsx(),
+    // dts({
+    //   insertTypesEntry: true // 生成入口文件的类型声明
+    // })
+  ]
 });
 // 入口文件
 const entryFile = path.resolve(__dirname, './entry.ts');
@@ -119,8 +126,7 @@ const buildSingle = async name => {
 const buildLib = async () => {
   await buildAll();
   // 按需打包
-  fs
-    .readdirSync(componentsDir)
+  fs.readdirSync(componentsDir)
     .filter(name => {
       // 过滤组件目录：只要目录不要文件，且目录中包含index.ts
       const componentDir = path.resolve(componentsDir, name);

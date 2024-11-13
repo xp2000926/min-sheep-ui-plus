@@ -9,6 +9,6 @@ export { Avatar };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Avatar.name, Avatar);
+    app.component(Avatar.name!, Avatar);
   }
 };

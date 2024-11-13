@@ -9,6 +9,6 @@ export { Radio };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Radio.name, Radio);
+    app.component(Radio.name!, Radio);
   }
 };

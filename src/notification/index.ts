@@ -9,6 +9,6 @@ export { Notification };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Notification.name, Notification);
+    app.component(Notification.name!, Notification);
   }
 };

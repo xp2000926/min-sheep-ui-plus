@@ -9,6 +9,6 @@ export { MessageBox };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(MessageBox.name, MessageBox);
+    app.component(MessageBox.name!, MessageBox);
   }
 };

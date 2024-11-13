@@ -9,6 +9,6 @@ export { Split };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Split.name, Split);
+    app.component(Split.name!, Split);
   }
 };

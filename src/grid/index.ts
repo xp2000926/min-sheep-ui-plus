@@ -9,6 +9,6 @@ export { Grid };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Grid.name, Grid);
+    app.component(Grid.name!, Grid);
   }
 };

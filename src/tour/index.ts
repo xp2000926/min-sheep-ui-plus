@@ -9,6 +9,6 @@ export { Tour };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Tour.name, Tour);
+    app.component(Tour.name!, Tour);
   }
 };

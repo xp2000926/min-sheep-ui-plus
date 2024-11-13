@@ -9,6 +9,6 @@ export { Result };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Result.name, Result);
+    app.component(Result.name!, Result);
   }
 };

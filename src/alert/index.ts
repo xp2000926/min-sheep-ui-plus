@@ -9,6 +9,6 @@ export { Alert };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Alert.name, Alert);
+    app.component(Alert.name!, Alert);
   }
 };

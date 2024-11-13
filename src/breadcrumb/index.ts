@@ -9,6 +9,6 @@ export { Breadcrumb };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Breadcrumb.name, Breadcrumb);
+    app.component(Breadcrumb.name!, Breadcrumb);
   }
 };
