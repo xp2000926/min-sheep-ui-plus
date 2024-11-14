@@ -9,8 +9,6 @@ export const genCoreTypesTemplate = (name: string) => {
   const className = `s-${name}`;
   return `import { defineComponent } from 'vue';
 import { ${propsTypeName}, ${propsName} } from './${propsFileName}';
-import '../../index.scss';
-import '../style/${name}.scss';
 
 export default defineComponent({
   name: '${compName}',

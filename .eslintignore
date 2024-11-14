@@ -3,3 +3,5 @@ build
 node_modules
 old-src/*
 old-docs/*
+src/App.vue
+src/views/*
