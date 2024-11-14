@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress';
-import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
+// import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
 import { tooltip } from './vitepress/plugins/tooltip';
+import { demoBlockPlugin } from 'vitepress-theme-demoblock';
 import fs from 'fs';
 const path = require('path');
 
@@ -37,7 +38,7 @@ fs.readdir(filename, async (err, files: any[]) => {
       return {
         file: fs
           .readdirSync(path.resolve(filename, element))
-          .filter(it => 'index.json'===it)[0],
+          .filter(it => 'index.json' === it)[0],
         path: path.resolve(filename, element)
       };
     })
@@ -73,9 +74,10 @@ export default defineConfig({
   },
   markdown: {
     config: md => {
-      md.use(blockPlugin);
-      md.use(codePlugin, {});
-      md.use(renderPlugin, {});
+      md.use(demoBlockPlugin);
+      // md.use(blockPlugin);
+      // md.use(codePlugin, {});
+      // md.use(renderPlugin, {});
       md.use(tooltip);
     }
   }

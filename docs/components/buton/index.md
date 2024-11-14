@@ -136,6 +136,40 @@
 
 :::
 
+## 按钮组(开发中)
+
+:::demo 使用`<el-button-group>`标签来嵌套你的按钮。
+
+```vue
+<template>
+  <s-button-group>
+    <s-button type="primary" icon="el-icon-arrow-left">上一页</s-button>
+    <s-button type="primary"
+      >下一页<i class="el-icon-arrow-right el-icon--right"></i
+    ></s-button>
+  </s-button-group>
+  <s-button-group>
+    <s-button type="primary" icon="el-icon-edit"></s-button>
+    <s-button type="primary" icon="el-icon-share"></s-button>
+    <s-button type="primary" icon="el-icon-delete"></s-button>
+  </s-button-group>
+</template>
+```
+
+:::
+
+## 加载中 (开发中)
+
+:::demo 要设置为 loading 状态，只要设置`loading`属性为`true`即可。
+
+```vue
+<template>
+  <s-button type="primary" :loading="true">加载中</s-button>
+</template>
+```
+
+:::
+
 ## Button API
 
 ### Button 属性
