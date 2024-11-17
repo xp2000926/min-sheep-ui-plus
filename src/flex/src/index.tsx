@@ -1,7 +1,5 @@
 import { defineComponent, toRefs } from 'vue';
 import { FlexProps, flexProps } from './flex-type';
-import '../../index.scss';
-import '../style/flex.scss';
 
 export default defineComponent({
   name: 'SFlex',

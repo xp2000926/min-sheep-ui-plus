@@ -1,7 +1,6 @@
 import { defineComponent } from 'vue';
 import { CardProps, cardProps } from './card-type';
-import '../../index.scss';
-import '../style/card.scss';
+
 
 export default defineComponent({
   name: 'SCard',

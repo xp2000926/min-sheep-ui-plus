@@ -9,6 +9,6 @@ export { Divider };
 // 导出插件
 export default {
   install(app: App) {
-    app.component(Divider.name, Divider);
+    app.component(Divider.name!, Divider);
   }
 };

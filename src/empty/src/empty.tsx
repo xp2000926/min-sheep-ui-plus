@@ -1,7 +1,5 @@
 import { defineComponent, toRefs } from 'vue';
 import { EmptyProps, emptyProps } from './empty-type';
-import '../../index.scss';
-import '../style/empty.scss';
 
 export default defineComponent({
   name: 'SEmpty',

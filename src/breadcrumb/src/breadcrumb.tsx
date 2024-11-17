@@ -1,7 +1,5 @@
 import { defineComponent } from 'vue';
 import { BreadcrumbProps, breadcrumbProps } from './breadcrumb-type';
-import '../../index.scss';
-import '../style/breadcrumb.scss';
 
 export default defineComponent({
   name: 'SBreadcrumb',

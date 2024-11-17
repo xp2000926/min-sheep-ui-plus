@@ -1,7 +1,5 @@
 import { defineComponent } from 'vue';
 import { TreeProps, treeProps } from './tree-type';
-import '../../index.scss';
-import '../style/tree.scss';
 
 export default defineComponent({
   name: 'STree',

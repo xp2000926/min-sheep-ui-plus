@@ -1,7 +1,6 @@
 import { defineComponent } from 'vue';
 import { CarouselProps, carouselProps } from './carousel-type';
-import '../../index.scss';
-import '../style/carousel.scss';
+
 
 export default defineComponent({
   name: 'SCarousel',

@@ -1,7 +1,5 @@
 import { defineComponent } from 'vue';
 import { GridProps, gridProps } from './grid-type';
-import '../../index.scss';
-import '../style/grid.scss';
 
 export default defineComponent({
   name: 'SGrid',

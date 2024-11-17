@@ -1,7 +1,5 @@
 import { defineComponent } from 'vue';
 import { MessageProps, messageProps } from './message-type';
-import '../../index.scss';
-import '../style/message.scss';
 
 export default defineComponent({
   name: 'SMessage',

@@ -1,7 +1,5 @@
 import { defineComponent } from 'vue';
 import { TourProps, tourProps } from './tour-type';
-import '../../index.scss';
-import '../style/tour.scss';
 
 export default defineComponent({
   name: 'STour',

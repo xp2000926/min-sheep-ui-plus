@@ -1,7 +1,5 @@
 import { defineComponent } from 'vue';
 import { ProgressProps, progressProps } from './progress-type';
-import '../../index.scss';
-import '../style/progress.scss';
 
 export default defineComponent({
   name: 'SProgress',

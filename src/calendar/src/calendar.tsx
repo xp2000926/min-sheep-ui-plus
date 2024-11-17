@@ -1,8 +1,7 @@
 import { defineComponent, toRefs } from 'vue';
 import { CalendarProps, calendarProps } from './calendar-type';
 import { Button, ButtonGroup } from '../../button/index';
-import '../../index.scss';
-import '../style/calendar.scss';
+
 
 export default defineComponent({
   name: 'SCalendar',
