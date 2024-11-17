@@ -4,7 +4,7 @@ const fs = require('fs');
 const { defineConfig, build } = require('vite');
 const vue = require('@vitejs/plugin-vue');
 const vueJsx = require('@vitejs/plugin-vue-jsx');
-// const dts = require('vite-plugin-dts');
+const {default:dts} = require('vite-plugin-dts');
 const fsExtra = require('fs-extra');
 
 // 基础配置
@@ -14,9 +14,12 @@ const baseConfig = defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    // dts({
-    //   insertTypesEntry: true // 生成入口文件的类型声明
-    // })
+    dts({
+      insertTypesEntry: true,
+      copyDtsFiles: true, // 确保复制声明文件
+      skipDiagnostics: false, // 不跳过类型检查
+      tsConfigFilePath: '../tsconfig.json' // 指定 tsconfig 路径
+    })
   ]
 });
 // 入口文件
