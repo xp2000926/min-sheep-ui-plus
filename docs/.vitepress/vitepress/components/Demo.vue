@@ -56,8 +56,8 @@ const codeclick = () => {
       });
 };
 onMounted(() => {
-  console.log('customClass', customClass.value);
-  console.log('sourceCode', sourceCode.value);
+  // console.log('customClass', customClass.value);
+  // console.log('sourceCode', sourceCode.value);
   nextTick(() => {
     highlightRef.value.animate([{ height: 0 }], {
       duration: 500,

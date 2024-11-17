@@ -142,6 +142,10 @@
     <SButton circle></SButton>
     <SButton circle size="small"></SButton>
   </div>
+  <div class="mb-4">
+    <s-button-group>tt</s-button-group>
+  </div>
+  <div class="mb-4"></div>
 </template>
 
 <script setup>

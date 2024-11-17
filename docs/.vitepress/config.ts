@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
-// import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
+import { blockPlugin, codePlugin, renderPlugin } from './vitepress/plugins/md';
 import { tooltip } from './vitepress/plugins/tooltip';
-import { demoBlockPlugin } from 'vitepress-theme-demoblock';
+// import { demoBlockPlugin } from 'vitepress-theme-demoblock';
 import fs from 'fs';
 const path = require('path');
 
@@ -74,10 +74,10 @@ export default defineConfig({
   },
   markdown: {
     config: md => {
-      md.use(demoBlockPlugin);
-      // md.use(blockPlugin);
-      // md.use(codePlugin, {});
-      // md.use(renderPlugin, {});
+      // md.use(demoBlockPlugin);
+      md.use(blockPlugin);
+      md.use(codePlugin, {});
+      md.use(renderPlugin, {});
       md.use(tooltip);
     }
   }

@@ -1,3 +1,6 @@
 .s-calendar {
-/* your component style */
+  .s-calendar--header {
+    display: flex;
+    justify-content: space-between;
+  }
 }

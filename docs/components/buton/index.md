@@ -136,27 +136,23 @@
 
 :::
 
-## 按钮组(开发中)
+## 按钮组
 
-:::demo 使用`<el-button-group>`标签来嵌套你的按钮。
+:::demo 使用`<s-button-group>`标签来嵌套你的按钮。
 
 ```vue
-<template>
-  <s-button-group>
-    <s-button type="primary" icon="el-icon-arrow-left">上一页</s-button>
-    <s-button type="primary"
-      >下一页<i class="el-icon-arrow-right el-icon--right"></i
-    ></s-button>
-  </s-button-group>
-  <s-button-group>
+<s-button-group>
+  <s-button type="primary">上一页</s-button>
+  <s-button type="primary">下一页</s-button>
+</s-button-group>
+<s-button-group class="ml-4">
     <s-button type="primary" icon="el-icon-edit"></s-button>
     <s-button type="primary" icon="el-icon-share"></s-button>
     <s-button type="primary" icon="el-icon-delete"></s-button>
-  </s-button-group>
-</template>
+</s-button-group>
 ```
-
 :::
+
 
 ## 加载中 (开发中)
 
