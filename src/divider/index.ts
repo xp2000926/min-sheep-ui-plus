@@ -1,7 +1,7 @@
 import { App } from 'vue';
 import Divider from './src/divider';
 import '../index.scss';
-import './style/divider .scss';
+import './style/divider.scss';
 
 // 具名导出
 export { Divider };

@@ -1,1 +1,1 @@
-.s-calendar .s-calendar--header{display:flex;justify-content:space-between}
+.s-calendar .s-calendar--header{display:flex;justify-content:space-between}.s-calendar .s-week-list{display:flex;width:100%}.s-calendar .s-week-list .s-week-list-item{width:14.2857142857%;text-align:center}.s-calendar .s-calendar-month-body-row{height:100px;display:flex}.s-calendar .s-calendar-month-body-cell{flex:1;border:1px solid #eee;padding:10px;color:#ccc}.s-calendar .s-calendar-month-body-cell.today span{color:#1989fa}.s-calendar .s-calendar-month-body-cell-current{color:#000}

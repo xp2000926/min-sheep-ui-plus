@@ -4,7 +4,7 @@ const fs = require('fs');
 const { defineConfig, build } = require('vite');
 const vue = require('@vitejs/plugin-vue');
 const vueJsx = require('@vitejs/plugin-vue-jsx');
-const {default:dts} = require('vite-plugin-dts');
+const { default: dts } = require('vite-plugin-dts');
 const fsExtra = require('fs-extra');
 
 // 基础配置
@@ -74,6 +74,7 @@ const createPackageJson = name => {
       fileStr,
       'utf-8'
     );
+    moveDtsFiles();
   } else {
     // 全量
     fsExtra.outputFile(
@@ -136,22 +137,70 @@ const buildLib = async () => {
       const isDir = fs.lstatSync(componentDir).isDirectory();
       return isDir && fs.readdirSync(componentDir).includes('index.ts');
     })
-    .filter(
-      item =>
-        ![
-          'avatar',
-          'calendar',
-          'card',
-          'carousel',
-          'divider',
-          'watermark',
-          'tooltip',
-          'result',
-          'flex'
-        ].includes(item)
-    )
+    // .filter(
+    //   item => item
+    //    ![
+    //      'avatar',
+    //      'calendar',
+    //      'card',
+    //      'carousel',
+    //      'divider',
+    //      'watermark',
+    //      'tooltip',
+    //      'result',
+    //      'flex'
+    //    ].includes(item)
+    // )
     .forEach(async name => {
       await buildSingle(name);
     });
 };
 buildLib();
+
+const moveDtsFiles = () => {
+  const baseSrcDir = path.resolve(__dirname, '../build/src');
+  if (fs.existsSync(baseSrcDir)) {
+    const componentDirs = fs
+      .readdirSync(baseSrcDir)
+      .filter(dir => fs.lstatSync(path.join(baseSrcDir, dir)).isDirectory());
+    componentDirs.forEach(componentDir => {
+      const srcDtsDir = path.join(baseSrcDir, componentDir, 'src');
+      if (fs.existsSync(srcDtsDir)) {
+        const dtsFiles = fs
+          .readdirSync(srcDtsDir)
+          .filter(file => file.endsWith('.d.ts'));
+        dtsFiles.forEach(dtsFile => {
+          const srcFilePath = path.join(srcDtsDir, dtsFile);
+          const targetDir = path.resolve(__dirname, `../build/${componentDir}`);
+          if (!fs.existsSync(targetDir)) {
+            fs.mkdirSync(targetDir);
+          }
+          const targetFilePath = path.join(targetDir, dtsFile);
+          // 检查目标文件是否已存在
+          if (fs.existsSync(targetFilePath)) {
+            // 提取文件名（不含后缀）和后缀
+            const [fileNameWithoutExt, fileExt] = dtsFile.split('.');
+            let newFileName = fileNameWithoutExt;
+            let index = 1;
+            // 循环检查，直到找到一个不存在的文件名
+            while (
+              fs.existsSync(
+                path.join(targetDir, `${newFileName}_${index}.${fileExt}`)
+              )
+            ) {
+              index++;
+            }
+            newFileName = `${newFileName}_${index}.${fileExt}`;
+            // 使用新的文件名进行移动
+            fsExtra.moveSync(srcFilePath, path.join(targetDir, newFileName), {
+              overwrite: false
+            });
+          } else {
+            // 如果目标文件不存在，直接正常移动
+            fsExtra.moveSync(srcFilePath, targetFilePath, { overwrite: false });
+          }
+        });
+      }
+    });
+  }
+};

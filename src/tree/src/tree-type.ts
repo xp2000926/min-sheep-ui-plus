@@ -16,5 +16,21 @@ export interface ITreeNode {
   disabled?: boolean;
 }
 
-export const treeProps = {} as const;
+export const treeProps = {
+  // 默认勾选的节点的 key 的数组
+  defaultCheckedKeys: {
+    type: Array<number | string>,
+    default: () => []
+  },
+  // 默认展开的节点的 key 的数组
+  defaultExpandedKeys: {
+    type: Array<number | string>,
+    default: () => []
+  },
+  // 默认禁用的节点的 key 的数组
+  defaultDisabledKeys: {
+    type: Array<number | string>,
+    default: () => []
+  }
+} as const;
 export type TreeProps = ExtractPropTypes<typeof treeProps>;
