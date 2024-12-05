@@ -10,6 +10,7 @@ import RadioPlugin, { Radio } from '../src/radio'; // 单选框
 import CalendarPlugin, { Calendar } from '../src/calendar'; // 日历
 import TabsPlugin, { Tabs, Tab } from '../src/tabs'; // 标签页
 import TriggerPlugin, { Trigger } from '../src/trigger'; // 触发器
+import SwitchPlugin, { Switch } from '../src/switch'; // 开关
 
 // 2.导出这些组件
 export {
@@ -23,7 +24,8 @@ export {
   Calendar,
   Tabs,
   Tab,
-  Trigger
+  Trigger,
+  Switch
 };
 const installs = [
   ButtonPlugin,
@@ -34,7 +36,8 @@ const installs = [
   RadioPlugin,
   CalendarPlugin,
   TabsPlugin,
-  TriggerPlugin
+  TriggerPlugin,
+  SwitchPlugin
 ];
 // 3.导出一个vue插件
 export default {
